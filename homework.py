@@ -29,6 +29,7 @@ class Training:
     """Базовый класс тренировки."""
     M_IN_KM: int = 1000
     LEN_STEP: float = 0.65
+    MIN_IN_HOUR: int = 60
 
     def __init__(self,
                  action: int,
@@ -68,7 +69,7 @@ class Training:
                            calories)
 
     def get_duration_minutes(self) -> float:
-        return self.duration * 60
+        return self.duration * self.MIN_IN_HOUR
 
 
 class Running(Training):
